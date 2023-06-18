@@ -1,6 +1,7 @@
 {
   "store_id": 4566,
   "name": "doppelstore",
+  "repository": "ecomplus-stores/doppelstore",
   "domain": "doppelstore.netlify.app",
   "short_name": "doppelstore",
   "description": "Doppel store camisetas",
