@@ -1,5 +1,5 @@
 {
-  "css": "",
+  "css": ".top-bar {\n    height: 30px;\n}\n\nmain .top-bar a.top-bar__countdown {\n    padding-top: 1px;\n}\n\n.header__nav {\n     background: #283043;\n    height: 40px;\n}\n\n.d-inline-block {\n    margin-top: 5px;\n}",
   "html_head": "",
   "html_body": ""
 }
