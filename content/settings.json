@@ -1,12 +1,12 @@
 {
   "domain": "doppelstore.netlify.app",
   "currency_symbol": "R$",
-  "primary_color": "#ea356c",
+  "primary_color": "",
   "theme": {
     "bootswatch": "_",
     "custom": "clean-dark"
   },
-  "bg_color": "#151b27",
+  "bg_color": "#000000",
   "repository": "ecomplus-stores/doppelstore",
   "logo": "/img/uploads/site_222.png",
   "name": "Doppel Store",
@@ -18,7 +18,7 @@
   "favicon": "/img/uploads/favicon.ico.png",
   "icons_font": "tabler-icons",
   "country_code": "BR",
-  "secondary_color": "#151b27",
+  "secondary_color": "",
   "icon": "/img/uploads/logo-efeito.png",
   "store_id": 4566,
   "description": "Camisetas de poeira das estrelas!",
