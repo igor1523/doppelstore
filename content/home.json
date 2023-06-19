@@ -4,16 +4,16 @@
   "sections": [
     {
       "type": "banner-slider",
-      "autoplay": 9000,
-      "full_width": false,
+      "autoplay": 6000,
+      "full_width": true,
       "slides": [
         {
-          "img": "/img/uploads/rect89.webp",
-          "link": "/headset",
-          "alt": "Headset banner",
-          "start": "2020-04-11T05:54:06.750Z",
-          "end": "2020-12-31T03:00:00.000Z",
-          "mobile_img": "/img/uploads/headphone.webp"
+          "img": "/img/uploads/faixa-desktop-leve-4-pague-3-022.jpg",
+          "link": "",
+          "alt": "",
+          "start": "2020-04-02T05:54:06.750Z",
+          "end": "2023-08-03T18:29:27.567Z",
+          "mobile_img": "/img/uploads/quadrado-leve-4-pague-3-02.jpg"
         },
         {
           "start": "",
