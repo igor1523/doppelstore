@@ -1,18 +1,21 @@
 {
   "shipping": {
     "show": true,
-    "text": "Entregamos para todo o Brasil"
+    "text": "Pedidos acima R$ 280",
+    "title": "Frete Grátis"
   },
   "installments": {
     "show": true,
-    "text": "Parcele sem juros"
+    "text": "Ou em até 12x",
+    "title": "3X SEM JUROS"
   },
   "exchange": {
-    "show": true,
+    "show": false,
     "text": "Não gostou? A primeira troca é gratuita"
   },
   "promo": {
     "show": true,
-    "text": "Diferentes promoções ao longo do ano!"
+    "text": "Mais de 4 mil avaliações positivas",
+    "title": "SUPER RECOMENDADA"
   }
 }
