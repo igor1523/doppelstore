@@ -1,5 +1,5 @@
 {
   "css": ".top-bar {\n    height: 30px;\n}\n\nmain .top-bar a.top-bar__countdown {\n    padding-top: 1px;\n}\n\n.header__nav {\n     background: #283043;\n    height: 40px;\n}\n\n.d-inline-block {\n    margin-top: 5px;\n}\n\nmain .html-clearfix {\n    background-color: #000000;\n}",
   "html_head": "",
-  "html_body": ""
+  "html_body": "<a href=\"https://wa.me/554132065962\" style=\"position:fixed;width:60px;height:60px;bottom:40px;background-color:#25d366;color:#FFF;border-radius:50px;text-align:center;font-size:30px;box-shadow: 1px 1px 2px #888;z-index:1000;right:40px;\" target=\"_blank\">\n  <i style=\"margin-top:16px\" class=\"fab fa-whatsapp\"></i>\n</a>"
 }
