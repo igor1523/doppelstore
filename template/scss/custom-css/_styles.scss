@@ -1,1 +1,31 @@
 // Add your custom CSS here.
+#header {
+    #search-input {
+        background-color: #6c7ea7;
+        &::-webkit-input-placeholder, &:-moz-placeholder, &::-ms-input-placeholder, &::-moz-placeholder {
+            color: #fff !important;
+            font-size: 12px !important;
+        }
+    }
+    .search__input-group, #instant-search .backdrop {
+        display: none !important;
+    }
+    #instant-search .search__box.card {
+        margin-top: 90px;
+        @media(min-width: 992px) {
+            margin-top: 100px;
+            height: 500px;
+        }
+    }
+}
+@media (max-width: 575.98px) {
+    #search-bar {
+        display: block !important;
+        display: block !important;
+        height: 46px !important;
+        transition: none;
+    }
+    #mobile-search-btn {
+        display: none !important;
+    }
+}
