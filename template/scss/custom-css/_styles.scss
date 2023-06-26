@@ -1,23 +1,112 @@
 // Add your custom CSS here.
-#header {
+.header {
     #search-input {
         background-color: #6c7ea7;
-        &::-webkit-input-placeholder, &:-moz-placeholder, &::-ms-input-placeholder, &::-moz-placeholder {
-            color: #fff !important;
-            font-size: 12px !important;
-        }
     }
-    .search__input-group, #instant-search .backdrop {
+
+    .search__input-group,
+    #instant-search .backdrop {
         display: none !important;
     }
+
     #instant-search .search__box.card {
         margin-top: 90px;
+
         @media(min-width: 992px) {
             margin-top: 100px;
             height: 500px;
         }
     }
+
+    @media(min-width: 576px) {
+        &__logo {
+            max-height: 100px;
+        }
+    }
+
+    &__nav {
+        height: 52px !important;
+        align-items: center;
+    }
+
+    &__nav-block {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    &__nav--full {
+        display: flex !important;
+        justify-content: space-around;
+        .d-inline-block {
+            margin-top: unset;
+            padding-top: var(--spacer-2);
+            padding-bottom: var(--spacer-2);
+            &::before {
+                content: '';
+                position: absolute;
+                bottom: 3px;
+                width: 0;
+                height: 3px;
+                background-color: var(--primary);
+                transition: ease-out .2s;
+            }
+            &:hover::before {
+                width: 106px;
+            }
+        }
+    }
+
+    &__category {
+        font-size: 18px;
+        margin-top: 0px !important;
+        padding: 0 var(--spacer-2) !important;
+
+        .i-chevron-down {
+            margin-left: .325rem;
+            color: var(--primary)
+        }
+
+        &:hover {
+            color: unset !important;
+        }
+    }
+
+    @media(min-width: 767px) {
+        padding-bottom: 0;
+        padding-right: 0;
+        padding-left: 0;
+    
+       &__container {
+            margin-bottom: 0;
+        }
+    
+        #menu_desk {
+            margin-top: 10px;
+        }
+    }
+
+    &__search-input::placeholder {
+        color: #fff !important;
+        font-size: 12px !important;
+    }
+
+    &__submenu {
+        background-color: #fff;
+        margin-top: 12px;
+        &-category {
+            font-size: 18px;
+            font-weight: 500;
+            color: var(--primary) !important;
+        }
+        &-subcategory {
+            color: #161b28 !important;
+        }
+        div {
+            min-width: 180px;
+        }
+    }
 }
+
 @media (max-width: 575.98px) {
     #search-bar {
         display: block !important;
@@ -25,6 +114,7 @@
         height: 46px !important;
         transition: none;
     }
+
     #mobile-search-btn {
         display: none !important;
     }

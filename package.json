@@ -38,6 +38,7 @@
   },
   "dependencies": {
     "@ecomplus/storefront-template": "^2.0.0-beta.237",
+    "@fontsource-variable/encode-sans": "^5.0.3",
     "@netlify/zip-it-and-ship-it": "^8.10.0",
     "firebase-tools": "^12.3.1"
   },

@@ -1,1 +1,5 @@
 @import '#template/scss/variables';
+// Supports weights 100-900
+@import '@fontsource-variable/encode-sans';
+
+$font-family-sans-serif: 'Encode Sans Variable', sans-serif;
