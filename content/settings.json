@@ -1,7 +1,7 @@
 {
   "domain": "doppelstore.netlify.app",
   "currency_symbol": "R$",
-  "primary_color": "#3dd193",
+  "primary_color": "#e9356c",
   "theme": {
     "bootswatch": "_",
     "custom": "clean-dark"
