@@ -9,13 +9,19 @@
     "text": "Ou em até 12x",
     "title": "3X SEM JUROS"
   },
-  "exchange": {
-    "show": false,
-    "text": "Não gostou? A primeira troca é gratuita"
+  "producer": {
+    "show": true,
+    "text": "Nós fabricamos",
+    "title": "Produção Nacional"
   },
   "promo": {
     "show": true,
     "text": "Mais de 4 mil avaliações positivas",
     "title": "SUPER RECOMENDADA"
+  },
+  "freight": {
+    "show": true,
+    "text": "Pedidos acima R$ 280",
+    "title": "Frete Grátis"
   }
 }
