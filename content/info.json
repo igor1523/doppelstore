@@ -1,8 +1,8 @@
 {
   "shipping": {
     "show": true,
-    "text": "PRODUÇÃO SOB DEMANDA",
-    "title": "Consulte o prazo no produto"
+    "title": "PRODUÇÃO SOB DEMANDA",
+    "text": "Consulte o prazo no produto"
   },
   "installments": {
     "show": true,

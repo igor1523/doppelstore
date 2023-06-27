@@ -22,8 +22,40 @@
       "enabled": true
     },
     {
-      "type": "custom-html",
-      "html": "<div class=\"row\">\n    <div class=\"col-12 col-lg-6\">\n        <div class=\"banner\">\n            <a href=\"/cadernos\" aria-label=\"\" >\n                <picture class=\"lozad fade img-fluid show\" data-iesrc=\"/img/uploads/Produtos-560x560-site-produtos-cadernos-lancamento_cadernos.webp\" data-alt=\"\" data-width=\"1244\" data-height=\"1100\" data-loaded=\"true\">\n                    <source srcset=\"/img/uploads/Produtos-560x560-site-produtos-cadernos-lancamento_cadernos.webp\" media=\"\">\n                    <img>\n                </picture>\n            </a>\n        </div>\n    </div>\n    <div class=\"col-12 col-lg-3 mb-lg-0\">\n        <div class=\"banner mb-2\">\n            <a href=\"/camisas\" aria-label=\"\" >\n                <picture class=\"lozad fade img-fluid show\" data-iesrc=\"/img/uploads/Produtos-560x560-site-produtos-camiseta-lancamento_cadernos.webp\" data-alt=\"\" data-width=\"2611\" data-height=\"1088\" data-loaded=\"true\">\n                    <source srcset=\"/img/uploads/Produtos-560x560-site-produtos-camiseta-lancamento_cadernos.webp\" media=\"\">\n                    <img>\n                </picture>\n            </a>\n        </div>\n        <div class=\"banner\">\n            <a href=\"/meias\" aria-label=\"\" >\n                <picture class=\"lozad fade img-fluid show\" data-iesrc=\"/img/uploads/Produtos-560x560-site-produtos-meias-lancamento_cadernos.webp\" data-alt=\"\" data-width=\"1248\" data-height=\"520\" data-loaded=\"true\">\n                    <source srcset=\"/img/uploads/Produtos-560x560-site-produtos-meias-lancamento_cadernos.webp\" media=\"\">\n                    <img>\n                </picture>\n            </a>\n        </div>\n    </div>\n    <div class=\"col-12 col-lg-3 mb-3 mb-lg-0\">\n        <div class=\"banner mb-2\">\n            <a href=\"/moletons\" aria-label=\"\" >\n                <picture class=\"lozad fade img-fluid show\" data-iesrc=\"/img/uploads/Produtos-560x560-site-produtos-moletom-lancamento_cadernos.webp\" data-alt=\"\" data-width=\"2611\" data-height=\"1088\" data-loaded=\"true\">\n                    <source srcset=\"/img/uploads/Produtos-560x560-site-produtos-moletom-lancamento_cadernos.webp\" media=\"\">\n                    <img>\n                </picture>\n            </a>\n        </div>\n        <div class=\"banner\">\n            <a href=\"/copo-bucks\" aria-label=\"\" >\n                <picture class=\"lozad fade img-fluid show\" data-iesrc=\"/img/uploads/Produtos-560x560-site-produtos-copos_bucks-lancamento_cadernos.webp\" data-alt=\"\" data-width=\"1248\" data-height=\"520\" data-loaded=\"true\">\n                    <source srcset=\"/img/uploads/Produtos-560x560-site-produtos-copos_bucks-lancamento_cadernos.webp\" media=\"\">\n                    <img>\n                </picture>\n            </a>\n        </div>\n    </div>\n</div>"
+      "type": "banners-grid-block",
+      "reverse_order": false,
+      "banners": [
+        {
+          "img": "/img/uploads/Produtos-560x560-site-produtos-cadernos-lancamento_cadernos.webp",
+          "alt": "",
+          "link": "/cadernos",
+          "mobile_img": ""
+        },
+        {
+          "img": "/img/uploads/Produtos-560x560-site-produtos-camiseta-lancamento_cadernos.webp",
+          "alt": "",
+          "link": "/camisas",
+          "mobile_img": ""
+        },
+        {
+          "img": "/img/uploads/Produtos-560x560-site-produtos-meias-lancamento_cadernos.webp",
+          "alt": "",
+          "link": "/meias",
+          "mobile_img": ""
+        },
+        {
+          "img": "/img/uploads/Produtos-560x560-site-produtos-moletom-lancamento_cadernos.webp",
+          "alt": "",
+          "link": "/moletons",
+          "mobile_img": ""
+        },
+        {
+          "img": "/img/uploads/Produtos-560x560-site-produtos-copos_bucks-lancamento_cadernos.webp",
+          "alt": "",
+          "link": "/copo-bucks",
+          "mobile_img": ""
+        }
+      ]
     },
     {
       "autoplay": 2000,

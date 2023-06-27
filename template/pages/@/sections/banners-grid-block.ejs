@@ -1,0 +1,20 @@
+<% if (Array.isArray(opt.banners) && opt.banners.length) { %>
+  <% const colSize = Math.ceil(12 / opt.banners.length) %>
+  <div class="banners-grid banners-grid-block my-3 my-md-4 my-lg-5">
+    <div class="container">
+      <div class="<%= opt.reverse_order ? 'reversed-order ' : '' %>row">
+        <div class="col-12 col-lg-6 mb-3 mb-lg-0">
+          <%- await include('@/sections/inc/banner', { _, opt: opt.banners[0] }) %>
+        </div>
+        <div class="col-12 col-lg-3 mb-lg-0">
+          <%- await include('@/sections/inc/banner', { _, opt: opt.banners[1] }) %>
+          <%- await include('@/sections/inc/banner', { _, opt: opt.banners[2] }) %>
+        </div>
+        <div class="col-12 col-lg-3 mb-lg-0">
+          <%- await include('@/sections/inc/banner', { _, opt: opt.banners[3] }) %>
+          <%- await include('@/sections/inc/banner', { _, opt: opt.banners[4] }) %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% } %>
