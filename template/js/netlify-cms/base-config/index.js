@@ -141,6 +141,63 @@ export default options => {
                     ]
                 }
             ]
+        },
+        {
+            label: 'Lista de parceiros',
+            name: 'partner_list',
+            widget: 'object',
+            fields: [
+                {
+                    label: 'Banners',
+                    name: 'banners',
+                    widget: 'list',
+                    fields: [
+                        {
+                            label: 'Imagem',
+                            name: 'img',
+                            widget: 'image',
+                            media_library: {
+                                config: {
+                                    max_file_size: Math.max(window.CMS_MAX_FILE_SIZE || 0, 1000000)
+                                }
+                            }
+                        },
+                        {
+                            label: 'Link',
+                            required: false,
+                            name: 'link',
+                            widget: 'string'
+                        },
+                        {
+                            label: 'Alt',
+                            required: false,
+                            name: 'alt',
+                            widget: 'string'
+                        },
+                        {
+                            label: 'Imagem para mobile',
+                            required: false,
+                            name: 'mobile_img',
+                            widget: 'image',
+                            media_library: {
+                                config: {
+                                    max_file_size: Math.max(window.CMS_MAX_FILE_SIZE || 0, 1000000)
+                                }
+                            }
+                        },
+                        {
+                            name: 'width',
+                            required: false,
+                            widget: 'hidden'
+                        },
+                        {
+                            name: 'height',
+                            required: false,
+                            widget: 'hidden'
+                        }
+                    ]
+                }
+            ]
         }
     ]
 

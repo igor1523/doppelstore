@@ -3,7 +3,7 @@ body {
     background-image: url(/img/uploads/fundo.webp) !important;
     background-color: #161b28 !important;
 }
-.collection-shelf .products-carousel, .products-carousel__title span {
+.collection-shelf .products-carousel, .products-carousel__title span, .partner__list + .custom-html .html-clearfix {
     background: unset !important;
 }
 .header {
@@ -273,4 +273,23 @@ body {
     text-transform: uppercase;
     padding: 5px 35px;
     color: #fff !important;
+}
+.gallery {
+    &__item, .glide__slide {
+        img {
+            max-width: 100%;
+        }
+    }
+}
+.partner__list {
+    padding: 60px 0;
+    background-color: #283043 !important;
+    max-width: var(--content-max-width);
+    width: 100%;
+
+    .glide__arrow {
+        background-color: var(--primary);
+        color: #fff;
+        opacity: 1;
+    }
 }

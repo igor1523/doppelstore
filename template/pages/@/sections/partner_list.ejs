@@ -1,0 +1,47 @@
+<%
+const slides = opt.banners
+if (slides && slides.length) {
+  %>
+  <div
+    class="brands-carousel container partner__list"
+  >
+    <div
+      class="glide"
+      data-per-view="5"
+      data-per-view-md="4"
+      data-per-view-sm="3"
+      data-per-view-xs="2"
+    >
+      <div class="glide__track" data-glide-el="track">
+        <ul class="glide__slides brands-carousel__list">
+          <% for (let i = 0; i < slides.length; i++) { %>
+            <li class="glide__slide brands-carousel__item">
+              <%- await include('@/sections/inc/banner', {
+                _, opt: { ...slides[i] }
+              }) %>
+            </li>
+          <% } %>
+        </ul>
+
+        <% if (slides.length > 1) { %>
+          <div class="glide__arrows d-none d-md-block" data-glide-el="controls">
+            <button
+              class="btn glide__arrow glide__arrow--left"
+              data-glide-dir="<"
+              aria-label="<%= _.dictionary('previous') %>"
+            >
+              <i class="i-chevron-left"></i>
+            </button>
+            <button
+              class="btn glide__arrow glide__arrow--right"
+              data-glide-dir=">"
+              aria-label="<%= _.dictionary('next') %>"
+            >
+              <i class="i-chevron-right"></i>
+            </button>
+          </div>
+        <% } %>
+      </div>
+    </div>
+  </div>
+<% } %>
