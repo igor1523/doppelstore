@@ -1,0 +1,111 @@
+<%
+    const promises = []
+    let res, collections
+    try {
+        res = await _.ecomClient.store({
+            url: '/collections.json'
+        })
+    } catch (err) {
+        console.error(err)
+    }
+    if (res) {
+        const listOfCollections = res.data.result
+        for (let index = 0; index < listOfCollections.length; index++) {
+            const collection = listOfCollections[index];
+            promises.push(_.ecomClient.store({
+                url: `/collections/${collection._id}.json`
+            }))
+        }
+    }
+    collections = (await Promise.all(promises))
+    .map((request) => {
+        return {
+            img: request.data.icon.url,
+            alt: request.data.icon.alt,
+            link: request.data.slug,
+            markdown_stamp: `<div class=\"stamps__block\"><div class=\"product-name\">${request.data.name}</div><p class=\"product-print-message\">Clique para ver <span>todos os produtos</span> disponíveis nesta estampa</p></div>`
+        }
+    })
+        
+        /* Promise.all(promises).then(res => {
+            res.forEach(request => {
+                if (request.data) {
+                    collections.push({
+                        img: request.data.icon.url,
+                        alt: request.data.icon.alt,
+                        link: request.data.slug,
+                        markdown_stamp: `<div class=\"stamps__block\"><div class=\"product-name\">${request.data.name}</div><p class=\"product-print-message\">Clique para ver <span>todos os produtos</span> disponíveis nesta estampa</p></div>`
+                    })
+                }
+            })
+        }) */
+    
+    %>
+
+<!doctype html>
+<html lang="<%= _.lang.replace('_', '-') %>" dir="ltr">
+
+<head>
+  <%- await include('@/head') %>
+</head>
+
+<body id="page-promo">
+  <%- await include('@/layout/menu') %>
+
+  <main role="main" id="main">
+    <%- await include('@/layout/header') %>
+    <article id="content" class="page page--estampas">
+  <div class="sections pb-1 pb-sm-2 pb-lg-4">
+  <div class="container">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb my-2 my-sm-3 d-none d-md-flex">
+        <li class="breadcrumb-item d-none d-md-block">
+          <a href="/">
+            <i class="fas fa-home"></i>
+          </a>
+        </li>
+        <li class="breadcrumb-item d-none d-md-block active" aria-current="page">
+            Estampas
+          </li>
+      </ol>
+    </nav>
+  </div>
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://www.doppelstore.com.br","name":"Homepage"}},{"@type":"ListItem","position":2,"item":{"@id":"https://www.doppelstore.com.br/estampas","name":"Estampas"}}]}</script>
+
+  <div class="page-title container mt-4 mb-4 mb-lg-5">
+    <div class="page-title__head">
+
+      <h1 class="my-0">
+        Estampas
+      </h1>
+    </div>
+
+  </div>
+  <div class="grid-retail">
+    <div class="container">
+        <% if (collections.length) { %>
+          <article class="search-engine__retail">
+            <div class="row">
+              <% for (let i = 0; i < collections.length; i++) { %>
+                <div class="col-6 col-md-4 col-lg-3">
+                  <%- await include('@/sections/inc/banner-with-text', {
+                    _, opt: { ...collections[i] }
+                  }) %>
+                </div>
+              <% } %>
+            </div>
+          </article>
+        <% } %>
+      </div>
+    </div>
+  </div>
+</article>
+    <%- await include('@/layout/footer') %>
+  </main>
+
+  <%- await include('@/json') %>
+  <%- await include('@/scripts') %>
+</body>
+
+</html>
