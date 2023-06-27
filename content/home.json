@@ -58,9 +58,107 @@
       ]
     },
     {
+      "type": "stamps_list",
+      "stamps_title": "ÚLTIMAS ESTAMPAS LANÇADAS",
+      "banners": [
+        {
+          "img": "/img/uploads/180_estampa_curupira_fofo_8755_1_05ca69e7481c946193a0b53403111bd4.jpg",
+          "alt": "",
+          "link": "/cadernos",
+          "mobile_img": "",
+          "markdown_stamp": "<div class=\"stamps__block\"><div class=\"product-name\">Estampa Curupira Fofo</div><p class=\"product-print-message\">Clique para ver <span>todos os produtos</span> disponíveis nesta estampa</p></div>"
+        },
+        {
+          "img": "/img/uploads/180_estampa_sistema_au_au_7966_1_cce0cea99391bbbcd2a7d0595bb4050b.jpg",
+          "alt": "",
+          "link": "/cadernos",
+          "mobile_img": "",
+          "markdown_stamp": "<div class=\"stamps__block\"><div class=\"product-name\">Estampa Sistema Au-Au</div><p class=\"product-print-message\">Clique para ver <span>todos os produtos</span> disponíveis nesta estampa</p></div>"
+        },
+        {
+          "img": "/img/uploads/180_estampa_dognauta_7961_1_07020ea16b4ea65f87d423af51304ce5.jpg",
+          "alt": "",
+          "link": "/cadernos",
+          "mobile_img": "",
+          "markdown_stamp": "<div class=\"stamps__block\"><div class=\"product-name\">Estampa Dognauta</div><p class=\"product-print-message\">Clique para ver <span>todos os produtos</span> disponíveis nesta estampa</p></div>"
+        },
+        {
+          "img": "/img/uploads/180_estampa_canis_majoris_7958_1_a3c1c0b724dadae8a8bd61a2e3c1bba5.jpg",
+          "alt": "",
+          "link": "/cadernos",
+          "mobile_img": "",
+          "markdown_stamp": "<div class=\"stamps__block\"><div class=\"product-name\">Estampa Canis Majoris</div><p class=\"product-print-message\">Clique para ver <span>todos os produtos</span> disponíveis nesta estampa</p></div>"
+        },
+        {
+          "img": "/img/uploads/180_estampa_vira_lactea_7953_1_98df1e4f22826182048207fe04cd8bbd.jpg",
+          "alt": "",
+          "link": "/cadernos",
+          "mobile_img": "",
+          "markdown_stamp": "<div class=\"stamps__block\"><div class=\"product-name\">Estampa Vira Láctea</div><p class=\"product-print-message\">Clique para ver <span>todos os produtos</span> disponíveis nesta estampa</p></div>"
+        },
+        {
+          "img": "/img/uploads/180_estampa_mia_lactea_7948_1_78b6e006ab2c77289debc155753039ee.jpg",
+          "alt": "",
+          "link": "/cadernos",
+          "mobile_img": "",
+          "markdown_stamp": "<div class=\"stamps__block\"><div class=\"product-name\">Estampa Mia Láctea</div><p class=\"product-print-message\">Clique para ver <span>todos os produtos</span> disponíveis nesta estampa</p></div>"
+        },
+        {
+          "img": "/img/uploads/180_estampa_astro_que_mia_7943_1_a1e53f7a82a2de21ccbd3951391f4870.jpg",
+          "alt": "",
+          "link": "/cadernos",
+          "mobile_img": "",
+          "markdown_stamp": "<div class=\"stamps__block\"><div class=\"product-name\">Estampa Astro Que Mia</div><p class=\"product-print-message\">Clique para ver <span>todos os produtos</span> disponíveis nesta estampa</p></div>"
+        },
+        {
+          "img": "/img/uploads/180_estampa_luz_do_miar_7938_1_44aef30f1cd4f4f279be31224fe92647.jpg",
+          "alt": "",
+          "link": "/cadernos",
+          "mobile_img": "",
+          "markdown_stamp": "<div class=\"stamps__block\"><div class=\"product-name\">Estampa Luz do Miar</div><p class=\"product-print-message\">Clique para ver <span>todos os produtos</span> disponíveis nesta estampa</p></div>"
+        }
+      ]
+    },
+    {
+      "type": "banners-grid-block",
+      "reverse_order": false,
+      "banners": [
+        {
+          "img": "/img/uploads/banner-mosaico-1.webp",
+          "alt": "",
+          "link": "/mulheres-na-ciencia",
+          "mobile_img": ""
+        },
+        {
+          "img": "/img/uploads/banner-mosaico-8.webp",
+          "alt": "",
+          "link": "/historia",
+          "mobile_img": ""
+        },
+        {
+          "img": "/img/uploads/banner-mosaico-4.webp",
+          "alt": "",
+          "link": "/nosso-manifesto",
+          "mobile_img": ""
+        },
+        {
+          "img": "/img/uploads/banner-mosaico-3.webp",
+          "alt": "",
+          "link": "/brilha-no-escuro",
+          "mobile_img": ""
+        },
+        {
+          "img": "/img/uploads/banner-mosaico-7.webp",
+          "alt": "",
+          "link": "/frases",
+          "mobile_img": ""
+        }
+      ]
+    },
+    {
       "autoplay": 2000,
       "page": 1,
-      "title": "",
+      "title": "AS MAIS FAMOSAS DE TODOS OS TEMPOS",
       "shuffle": false,
       "headless": false,
       "type": "collection-shelf",
@@ -73,17 +171,61 @@
       "img": "/img/uploads/1675345524_1621135595_trustvox-desktop2.webp"
     },
     {
-      "type": "custom-html",
-      "html": "<div class=\"row\">\n    <div class=\"col-12 col-lg-6\">\n        <div class=\"banner\">\n            <a href=\"/mulheres-na-ciencia\" aria-label=\"\" >\n                <picture class=\"lozad fade img-fluid show\" data-iesrc=\"/img/uploads/banner-mosaico-1.webp\" data-alt=\"\" data-width=\"1244\" data-height=\"1100\" data-loaded=\"true\">\n                    <source srcset=\"/img/uploads/banner-mosaico-1.webp\" media=\"\">\n                    <img>\n                </picture>\n            </a>\n        </div>\n    </div>\n    <div class=\"col-12 col-lg-3 mb-lg-0\">\n        <div class=\"banner mb-2\">\n            <a href=\"/historia\" aria-label=\"\" >\n                <picture class=\"lozad fade img-fluid show\" data-iesrc=\"/img/uploads/banner-mosaico-8.webp\" data-alt=\"\" data-width=\"2611\" data-height=\"1088\" data-loaded=\"true\">\n                    <source srcset=\"/img/uploads/banner-mosaico-8.webp\" media=\"\">\n                    <img>\n                </picture>\n            </a>\n        </div>\n        <div class=\"banner mb-2\">\n            <a href=\"/nosso-manifesto\" aria-label=\"\" >\n                <picture class=\"lozad fade img-fluid show\" data-iesrc=\"/img/uploads/banner-mosaico-4.webp\" data-alt=\"\" data-width=\"2611\" data-height=\"1088\" data-loaded=\"true\">\n                    <source srcset=\"/img/uploads/banner-mosaico-4.webp\" media=\"\">\n                    <img>\n                </picture>\n            </a>\n        </div>\n    </div>\n    <div class=\"col-12 col-lg-3 mb-3 mb-lg-0\">\n        <div class=\"banner\">\n            <a href=\"/brilha-no-escuro\" aria-label=\"\" >\n                <picture class=\"lozad fade img-fluid show\" data-iesrc=\"/img/uploads/banner-mosaico-3.webp\" data-alt=\"\" data-width=\"1248\" data-height=\"520\" data-loaded=\"true\">\n                    <source srcset=\"/img/uploads/banner-mosaico-3.webp\" media=\"\">\n                    <img>\n                </picture>\n            </a>\n        </div>\n        <div class=\"banner\">\n            <a href=\"/frases\" aria-label=\"\" >\n                <picture class=\"lozad fade img-fluid show\" data-iesrc=\"/img/uploads/banner-mosaico-7.webp\" data-alt=\"\" data-width=\"1248\" data-height=\"520\" data-loaded=\"true\">\n                    <source srcset=\"/img/uploads/banner-mosaico-7.webp\" media=\"\">\n                    <img>\n                </picture>\n            </a>\n        </div>\n    </div>\n</div>"
+      "type": "banners-grid-block",
+      "reverse_order": true,
+      "banners": [
+        {
+          "img": "/img/uploads/banner-mosaico-2.webp",
+          "alt": "",
+          "link": "/cursos",
+          "mobile_img": ""
+        },
+        {
+          "img": "/img/uploads/banner-mosaico-10.webp",
+          "alt": "",
+          "link": "/matematica",
+          "mobile_img": ""
+        },
+        {
+          "img": "/img/uploads/banner-mosaico-12.webp",
+          "alt": "",
+          "link": "/astronomia",
+          "mobile_img": ""
+        },
+        {
+          "img": "/img/uploads/banner-mosaico-13.webp",
+          "alt": "",
+          "link": "/quimica",
+          "mobile_img": ""
+        },
+        {
+          "img": "/img/uploads/banner-mosaico-11.webp",
+          "alt": "",
+          "link": "/fisica",
+          "mobile_img": ""
+        }
+      ]
+    },
+    {
+      "autoplay": 2000,
+      "page": 1,
+      "title": "CADERNOS",
+      "shuffle": false,
+      "headless": false,
+      "type": "collection-shelf",
+      "limit": 12,
+      "collection_id": null,
+      "sort": "news"
+    },
+    {
+      "type": "responsive-banner",
+      "img": "/img/uploads/categoria-leve-4-pague-3-02-100.webp",
+      "link": "/vestuario"
     },
     {
       "type": "page-title",
       "title": "Doppel Store",
       "description": "Camisetas feitas de poeira das estrelas!"
-    },
-    {
-      "type": "custom-html",
-      "html": "<div class=\"row\">\n    <div class=\"col-12 col-lg-3 mb-lg-0\">\n        <div class=\"banner mb-2\">\n            <a href=\"/quimica\" aria-label=\"\" >\n                <picture class=\"lozad fade img-fluid show\" data-iesrc=\"/img/uploads/banner-mosaico-13.webp\" data-alt=\"\" data-width=\"2611\" data-height=\"1088\" data-loaded=\"true\">\n                    <source srcset=\"/img/uploads/banner-mosaico-13.webp\" media=\"\">\n                    <img>\n                </picture>\n            </a>\n        </div>\n        <div class=\"banner\">\n            <a href=\"/fisica\" aria-label=\"\" >\n                <picture class=\"lozad fade img-fluid show\" data-iesrc=\"/img/uploads/banner-mosaico-11.webp\" data-alt=\"\" data-width=\"1248\" data-height=\"520\" data-loaded=\"true\">\n                    <source srcset=\"/img/uploads/banner-mosaico-11.webp\" media=\"\">\n                    <img>\n                </picture>\n            </a>\n        </div>\n    </div>\n    <div class=\"col-12 col-lg-3 mb-lg-0\">\n        <div class=\"banner mb-2\">\n            <a href=\"/matematica\" aria-label=\"\" >\n                <picture class=\"lozad fade img-fluid show\" data-iesrc=\"/img/uploads/banner-mosaico-10.webp\" data-alt=\"\" data-width=\"2611\" data-height=\"1088\" data-loaded=\"true\">\n                    <source srcset=\"/img/uploads/banner-mosaico-10.webp\" media=\"\">\n                    <img>\n                </picture>\n            </a>\n        </div>\n        <div class=\"banner\">\n            <a href=\"/astronomia\" aria-label=\"\" >\n                <picture class=\"lozad fade img-fluid show\" data-iesrc=\"/img/uploads/banner-mosaico-12.webp\" data-alt=\"\" data-width=\"1248\" data-height=\"520\" data-loaded=\"true\">\n                    <source srcset=\"/img/uploads/banner-mosaico-12.webp\" media=\"\">\n                    <img>\n                </picture>\n            </a>\n        </div>\n    </div>\n    <div class=\"col-12 col-lg-6 mb-3 mb-lg-0\">\n        <div class=\"banner\">\n            <a href=\"/cursos\" aria-label=\"\" >\n                <picture class=\"lozad fade img-fluid show\" data-iesrc=\"/img/uploads/banner-mosaico-2.webp\" data-alt=\"\" data-width=\"1244\" data-height=\"1100\" data-loaded=\"true\">\n                    <source srcset=\"/img/uploads/banner-mosaico-2.webp\" media=\"\">\n                    <img>\n                </picture>\n            </a>\n        </div>\n    </div>\n</div>"
     }
   ]
 }

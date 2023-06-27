@@ -1,4 +1,11 @@
 // Add your custom CSS here.
+body {
+    background-image: url(/img/uploads/fundo.webp) !important;
+    background-color: #161b28 !important;
+}
+.collection-shelf .products-carousel, .products-carousel__title span {
+    background: unset !important;
+}
 .header {
     background-color: #161b28 !important;
     background-image: url(/img/uploads/fundo.webp);
@@ -176,9 +183,15 @@
         margin-top: -10px;
     }
 }
-.custom-html .row.reverse-order {
-    display: flex;
-    flex-direction: row-reverse
+.responsive-baner, .banners-grid-block {
+    .banner {
+        transition: ease-out .3s;
+        &:hover {
+            opacity: .9;
+            transform: scale(1.05);
+            transition: ease-out .3s;
+        }
+    }
 }
 .banners-grid-block {
     .col-12.col-lg-3 .banner {
@@ -190,13 +203,74 @@
             padding-top: 15px;
         }
     }
-    .banner {
-        transition: ease-out .3s;
-        &:hover {
-            opacity: .9;
-            transform: scale(1.05);
-            transition: ease-out .3s;
-        }
+    
+    .reversed-order {
+        display: flex;
+        flex-direction: row-reverse !important
     }
 }
  
+.stamps__list {
+
+    a, .stamps__block, .product-print-message {
+        background-color: #283043;
+    }
+
+    .product-name {
+        flex-grow: 1;
+        max-height: 40px;
+        font-size: .875rem;
+        font-weight: 500;
+        color: #fff !important;
+        text-align: left
+    }
+
+    .product-print-message {
+        font-size: 12px;
+        margin-top: 5px;
+        margin-bottom: 0;
+        color: #fff;
+        span {
+            color: var(--primary)
+        }
+        text-align: left;
+    }
+
+    .glide__arrow {
+        background-color: var(--primary);
+        color: #fff;
+        opacity: 1;
+        @media(min-width: 992px) {
+            &--right {
+                margin-right: -80px;
+            }
+            &--left {
+                margin-left: -80px;
+            }
+        }
+    }
+
+    .stamps__text {
+        padding-bottom: 5px;
+    }
+}
+.products-carousel__title {
+    font-size: 1.75rem !important;
+    &::before {
+        background-color: unset;
+    }
+    &::after {
+        content: '';
+        display: block;
+        width: 62px;
+        height: 4px;
+        margin: 15px auto 0;
+        background-color: var(--primary);
+    }
+}
+.ver-mais h3 a {
+    background-color: var(--primary);
+    text-transform: uppercase;
+    padding: 5px 35px;
+    color: #fff !important;
+}
