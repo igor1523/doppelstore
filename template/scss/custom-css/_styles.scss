@@ -348,7 +348,7 @@ body {
     .banner, .html-clearfix {
         background-color: #283043 !important;
     }
-    
+
     .product-name {
         flex-grow: 1;
         max-height: 40px;
@@ -369,3 +369,12 @@ body {
         text-align: left;
     }
 }
+/* .top-bar {
+    background-color: var(--primary) !important;
+    display: flex;
+    justify-content: space-between;
+    &__countdown {
+        background-color: var(--primary) !important;
+        filter: unset !important;
+    }
+} */
