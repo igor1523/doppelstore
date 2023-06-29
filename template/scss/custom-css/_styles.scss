@@ -407,13 +407,6 @@ main .html-clearfix {
         color: #fff;
     }
 
-    .prices__value {
-        color: var(--primary);
-        small {
-            color: #fff !important;
-        }
-    }
-
     .prices__installments {
         font-size: .875rem !important;
         font-weight: 500 !important;
@@ -426,7 +419,7 @@ main .html-clearfix {
         }
     }
 
-    &__name, &__rating, &__prices, &__buy {
+    &__name, &__rating, &__prices, &__buy, .variations {
         padding-left: var(--spacer-3);
         padding-right: var(--spacer-3);
         @media(max-width: 992px) {
@@ -596,4 +589,23 @@ main .html-clearfix {
         }
     }
 
+}
+
+.prices__value {
+    color: var(--primary);
+    small {
+        color: #fff !important;
+    }
+}
+
+.product-print-design-link {
+    transition: ease .5s background-color;
+    display: block;
+    margin: 10px auto 8px;
+    border-radius: 5px;
+    padding: 8px;
+    font-size: 14px;
+    text-align: center;
+    background-color: #2a7ec4;
+    color: #fff;
 }
