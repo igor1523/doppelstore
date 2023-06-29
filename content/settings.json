@@ -8,7 +8,7 @@
   },
   "bg_color": "#151b27",
   "repository": "ecomplus-stores/doppelstore",
-  "logo": "/img/uploads/site_222.png",
+  "logo": "/img/uploads/site_222.webp",
   "name": "Doppel Store",
   "short_name": "Doppel Store",
   "lang": "pt_br",
@@ -19,8 +19,8 @@
   "icons_font": "_",
   "country_code": "BR",
   "secondary_color": "#f4f4f4",
-  "icon": "/img/uploads/logo-efeito.png",
+  "icon": "/img/uploads/logo-efeito.webp",
   "store_id": 4566,
   "description": "Camisetas de poeira das estrelas!",
-  "large_icon": "/img/uploads/logo-efeito.png"
+  "large_icon": "/img/uploads/logo-efeito.webp"
 }
