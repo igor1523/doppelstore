@@ -91,7 +91,6 @@ const themeCustom = _.settings.theme.custom || ''
                 <% (_.cms('pages') || []).forEach(slug => { %>
                   <% const { title } = _.cms(`pages/${slug}`) %>
                   <li>
-                    <i class="i-chevron-right"></i>
                     <a href="/pages/<%= slug %>">
                       <%= title %>
                     </a>
@@ -102,7 +101,6 @@ const themeCustom = _.settings.theme.custom || ''
               <ul class="footer__links">
                 <% footer.links_1.list.forEach(({ url, text }) => { %>
                   <li>
-                    <i class="i-chevron-right"></i>
                     <a href="<%= url %>">
                       <%= text %>
                     </a>
@@ -132,7 +130,6 @@ const themeCustom = _.settings.theme.custom || ''
                 <% _.categories.forEach(({ name, slug, parent }) => { %>
                   <% if (!parent) { %>
                     <li>
-                      <i class="i-chevron-right"></i>
                       <a href="/<%= slug %>">
                         <%= name %>
                       </a>
@@ -144,7 +141,6 @@ const themeCustom = _.settings.theme.custom || ''
               <ul class="footer__links">
                 <% footer.links_2.list.forEach(({ url, text }) => { %>
                   <li>
-                    <i class="i-chevron-right"></i>
                     <a href="<%= url %>">
                       <%= text %>
                     </a>

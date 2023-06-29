@@ -1,8 +1,111 @@
 // Add your custom CSS here.
 body {
-    background-image: url(/img/uploads/fundo.webp) !important;
-    background-color: #161b28 !important;
+  background-image: url(/img/uploads/fundo.webp);
 }
+
+.top-bar {
+  background-color: rgba(var(--primary-rgb), .5);
+  &__countdown,
+  &__nav {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  &__nav {
+    padding: 0;
+    color: #dee2e6;
+    .row {
+      align-items: center;
+    }
+  }
+  &__highlight,
+  &__countdown {
+    color: #fff;
+    padding: .25rem .75rem;
+    background: var(--primary);
+  }
+}
+
+.header {
+  border-bottom: none;
+  padding-top: 0;
+
+  &__container {
+    max-width: none;
+  }
+  &__row {
+    justify-content: center;
+  }
+  #search-bar {
+    max-width: 720px;
+  }
+  .header__nav--full {
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  &__nav {
+    text-transform: none;
+    font-weight: 500;
+    background: #283043;
+    a {
+      color: #fff;
+      &:hover {
+        background-color: transparent;
+      }
+    }
+  }
+
+  &__search-input{
+    font-size: 1rem;
+    &::placeholder {
+      color: #fff;
+    }
+  }
+
+  &__buttons {
+    i {
+      font-size: 1.75rem;
+      @media (min-width: 1024px) {
+        font-size: 2.5rem;
+      }
+    }
+  }
+  #user-button {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    gap: .2rem;
+    > span {
+      opacity: .9;
+    }
+  }
+}
+
+main .html-clearfix {
+  background: #000;
+}
+
+.footer {
+  background: #283043;
+  border-top: none;
+  &__title {
+    color: $gray-200 !important;
+  }
+  &__payment-methods i {
+    background-color: rgba(225, 225, 225, .875);
+    border-radius: 2px;
+  }
+  &__links {
+    font-weight: 500;
+  }
+  &__credits {
+    border-color: rgba(0, 0, 0, .15);
+  }
+}
+
+// ---
+
 .collection-shelf .products-carousel, .products-carousel__title span, .partner__list + .custom-html .html-clearfix, .breadcrumb, #product-description .html-clearfix, .recommended-products .products-carousel {
     background: unset !important;
 }
@@ -109,11 +212,6 @@ body {
         &__search-btn svg {
             margin-bottom: 5px;
         }
-    }
-
-    &__search-input::placeholder {
-        color: #fff !important;
-        font-size: 12px !important;
     }
 
     &__submenu {

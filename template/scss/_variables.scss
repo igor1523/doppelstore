@@ -1,7 +1,35 @@
 @import '#template/scss/variables';
-// Supports weights 100-900
-@import '@fontsource-variable/encode-sans';
+
+$success: #3bbea7;
+$warning: #e0234e;
+$white: #fff;
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+$gray-700: #495057;
+$gray-800: #343a40;
+$gray-900: #212529;
+$black: #000;
+$light: $gray-700;
+
+$list-group-color: $white;
+$list-group-bg: $gray-900;
+$list-group-border-color: $gray-700;
+
+$breadcrumb-divider-color: $gray-500;
+$breadcrumb-active-color: $white;
+$breadcrumb-divider: quote(".");
+
+$input-bg: $black;
+$input-color: $white;
+$custom-select-bg: $black;
+$custom-select-disabled-bg: $gray-600;
+$component-active-bg: $white;
 
 $font-family-sans-serif: 'Encode Sans Variable', sans-serif;
-$body-bg: #161b28 !important;
-$bg-usual: #283043;
+
+$body-bg: #161b28;
+$body-color: $gray-100;
