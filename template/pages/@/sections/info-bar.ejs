@@ -17,15 +17,15 @@ const barCols = []
 
 <% if (barCols.length) { %>
   <section class="info-bar">
-    <div class="container">
+    <div class="container-fluid">
       <div class="info-bar__nav row">
         <% barCols.forEach(({ link, icon, title, text }) => { %>
-          <div class="col-auto col-sm-6 col-lg">
-            <a class="info-bar__item" href="<%= link || 'javascript:;' %>">
+          <div class="col-auto col-sm-6 col-lg-auto">
+            <%- link ? `<a class="info-bar__item" href="${link}">` : '<span class="info-bar__item">' %>
               <span class="rounded-icon">
                 <img src="/img/uploads/<%= icon %>.png" alt="<%= icon %>">
               </span>
-              <div class="ml-2 ml-md-3">
+              <div class="ml-3 ml-md-2">
                 <% if(title) { %>
                   <div class="info-bar__title">
                     <%= title %>
@@ -35,7 +35,7 @@ const barCols = []
                   <%= text %>
                 </div>
               </div>
-            </a>
+              <%- link ? '</a>' : '</span>' %>
           </div>
         <% }) %>
       </div>

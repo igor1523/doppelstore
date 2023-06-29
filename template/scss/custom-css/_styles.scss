@@ -1,4 +1,13 @@
 // Add your custom CSS here.
+$dark-slate: #283043;
+$dark-slate-rgb: 40,48,67;
+$slate-100: #f1f5f9;
+$slate-200: #e2e8f0;
+$slate-300: #cbd5e1;
+$slate-400: #94a3b8;
+$slate-500: #64748b;
+$slate-600: #475569;
+
 body {
   background-image: url(/img/uploads/fundo.webp);
 }
@@ -13,7 +22,7 @@ body {
   }
   &__nav {
     padding: 0;
-    color: #dee2e6;
+    color: $slate-300;
     .row {
       align-items: center;
     }
@@ -29,7 +38,6 @@ body {
 .header {
   border-bottom: none;
   padding-top: 0;
-
   &__container {
     max-width: none;
   }
@@ -47,7 +55,7 @@ body {
   &__nav {
     text-transform: none;
     font-weight: 500;
-    background: #283043;
+    background: $dark-slate;
     a {
       color: #fff;
       &:hover {
@@ -56,7 +64,7 @@ body {
     }
   }
 
-  &__search-input{
+  &__search-input {
     font-size: 1rem;
     &::placeholder {
       color: #fff;
@@ -87,7 +95,7 @@ main .html-clearfix {
 }
 
 .footer {
-  background: #283043;
+  background: $dark-slate;
   border-top: none;
   &__title {
     color: $gray-200 !important;
@@ -101,6 +109,37 @@ main .html-clearfix {
   }
   &__credits {
     border-color: rgba(0, 0, 0, .15);
+  }
+}
+
+.info-bar {
+  background-color: $dark-slate;
+  @media (min-width: 1024px) {
+    max-width: none;
+    &__nav {
+      max-width: var(--content-max-width);
+      justify-content: center;
+    }
+  }
+  &__item {
+    max-width: 280px;
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+  }
+  span.info-bar__item::after {
+    display: none;
+  }
+
+  &__title {
+    font-size: .85rem;
+    font-weight: 600;
+    color: #fff;
+    text-transform: uppercase;
+  }
+  &__text {
+    font-size: .785rem;
+    color: $slate-300;
+    text-transform: none;
   }
 }
 
@@ -254,25 +293,6 @@ main .html-clearfix {
 
     #mobile-search-btn {
         display: none !important;
-    }
-}
-.info-bar {
-    background-color: #283043 !important;
-    &__title {
-        font-size: 13px !important;
-        font-weight: 600;
-        color: #fff
-    }
-    &__text {
-        font-size: 12.16px !important;
-        line-height: 1.4;
-        color: #c4cdea;
-    }
-    &__nav {
-        .col-sm-6.col-lg {
-            padding-left: 5px;
-            padding-right: 5px;
-        }
     }
 }
 .rounded-icon {
