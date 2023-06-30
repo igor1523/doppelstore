@@ -3,11 +3,11 @@ const slides = opt.banners
 if (slides && slides.length) {
   %>
   <% if (opt.stamps_title) { %>
-    <h2 class="products-carousel__title title-section"><%= opt.stamps_title %></h2>
+    <h2 class="products-carousel__title title-section">
+      <%= opt.stamps_title %>
+    </h2>
   <% } %>
-  <div
-    class="brands-carousel container stamps__list"
-  >
+  <div class="brands-carousel container stamps__list">
     <div
       class="glide"
       data-per-view="5"
@@ -24,9 +24,6 @@ if (slides && slides.length) {
               }) %>
             </li>
           <% } %>
-          <li class="glide__slide brands-carousel__item ver-mais">
-            <h3><a href="/produtos-por-estampa">Ver Mais</a></h3>
-          </li>
         </ul>
 
         <% if (slides.length > 1) { %>

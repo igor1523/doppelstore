@@ -1,12 +1,12 @@
 // Add your custom CSS here.
 $dark-slate: #283043;
-$dark-slate-rgb: 40,48,67;
 $slate-100: #f1f5f9;
 $slate-200: #e2e8f0;
 $slate-300: #cbd5e1;
 $slate-400: #94a3b8;
 $slate-500: #64748b;
 $slate-600: #475569;
+$container-width: 1110px;
 
 body {
   background-image: url(/img/uploads/fundo.webp);
@@ -37,6 +37,7 @@ body {
 
 .header {
   border-bottom: none;
+  box-shadow: var(--box-shadow);
   padding-top: 0;
   &__container {
     max-width: none;
@@ -90,10 +91,6 @@ body {
   }
 }
 
-main .html-clearfix {
-  background: #000;
-}
-
 .footer {
   background: $dark-slate;
   border-top: none;
@@ -143,9 +140,89 @@ main .html-clearfix {
   }
 }
 
+.products-carousel {
+  .glide {
+    max-width: $container-width;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.stamps__list {
+  .banner {
+    max-width: 215px;
+    background-color: $dark-slate;
+  }
+  .product-name {
+    flex-grow: 1;
+    height: 40px;
+    font-size: .875rem;
+    font-weight: 500;
+    color: #fff !important;
+    text-align: left;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+  .product-print-message {
+    font-size: 12px;
+    margin-top: 5px;
+    margin-bottom: 0;
+    color: #fff;
+    span {
+      color: var(--primary)
+    }
+    text-align: left;
+  }
+
+  .glide__arrow {
+    padding: .85rem .25rem;
+    background-color: rgba(var(--primary-rgb), .75);
+    color: #fff;
+    opacity: 1;
+    @media(min-width: 992px) {
+      &--right {
+        margin-right: -40px;
+      }
+      &--left {
+        margin-left: -40px;
+      }
+    }
+  }
+}
+
+.partner__list {
+  padding: 2rem 15px;
+  background-color: $dark-slate;
+  > * {
+    max-width: var(--content-max-width);
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+  }
+}
+
+.product-description .html-clearfix,
+.md-content .container {
+  background: rgba($dark-slate, 0.7);
+  padding: 1.5rem;
+  border-radius: .5rem;
+}
+.table td,
+.table th {
+  border-color: rgba($dark-slate, 0.8);
+}
+
+.product-specs {
+  .text-muted {
+    color: $slate-300 !important;
+  }
+}
+
 // ---
 
-.collection-shelf .products-carousel, .products-carousel__title span, .partner__list + .custom-html .html-clearfix, .breadcrumb, #product-description .html-clearfix, .recommended-products .products-carousel {
+.collection-shelf .products-carousel, .products-carousel__title span, .breadcrumb, .recommended-products .products-carousel {
     background: unset !important;
 }
 .header {
@@ -329,51 +406,6 @@ main .html-clearfix {
         flex-direction: row-reverse !important
     }
 }
- 
-.stamps__list {
-
-    a, .stamps__block, .product-print-message {
-        background-color: #283043;
-    }
-
-    .product-name {
-        flex-grow: 1;
-        max-height: 40px;
-        font-size: .875rem;
-        font-weight: 500;
-        color: #fff !important;
-        text-align: left
-    }
-
-    .product-print-message {
-        font-size: 12px;
-        margin-top: 5px;
-        margin-bottom: 0;
-        color: #fff;
-        span {
-            color: var(--primary)
-        }
-        text-align: left;
-    }
-
-    .glide__arrow {
-        background-color: var(--primary);
-        color: #fff;
-        opacity: 1;
-        @media(min-width: 992px) {
-            &--right {
-                margin-right: -80px;
-            }
-            &--left {
-                margin-left: -80px;
-            }
-        }
-    }
-
-    .stamps__text {
-        padding-bottom: 5px;
-    }
-}
 .products-carousel__title {
     font-size: 1.75rem !important;
     &::before {
@@ -388,29 +420,11 @@ main .html-clearfix {
         background-color: var(--primary);
     }
 }
-.ver-mais h3 a {
-    background-color: var(--primary);
-    text-transform: uppercase;
-    padding: 5px 35px;
-    color: #fff !important;
-}
 .gallery {
     &__item, .glide__slide {
         img {
             max-width: 100%;
         }
-    }
-}
-.partner__list {
-    padding: 60px 0;
-    background-color: #283043 !important;
-    max-width: var(--content-max-width);
-    width: 100%;
-
-    .glide__arrow {
-        background-color: var(--primary);
-        color: #fff;
-        opacity: 1;
     }
 }
 
