@@ -42,22 +42,22 @@ import EcomSearch from '@ecomplus/search-engine'
 import ecomCart from '@ecomplus/shopping-cart'
 import { isMobile } from '@ecomplus/storefront-twbs'
 import lozad from 'lozad'
-import sortApps from './helpers/sort-apps'
-import addIdleCallback from './helpers/add-idle-callback'
-import scrollToElement from './helpers/scroll-to-element'
+import sortApps from '@ecomplus/storefront-components/src/js/helpers/sort-apps'
+import addIdleCallback from '@ecomplus/storefront-components/src/js/helpers/add-idle-callback'
+import scrollToElement from '@ecomplus/storefront-components/src/js/helpers/scroll-to-element'
 import { Portal } from '@linusborg/vue-simple-portal'
-import ALink from '../ALink.vue'
-import AAlert from '../AAlert.vue'
-import APicture from '../APicture.vue'
-import APrices from '../APrices.vue'
-import AShare from '../AShare.vue'
-import ProductVariations from '../ProductVariations.vue'
-import ProductGallery from '../ProductGallery.vue'
-import QuantitySelector from '../QuantitySelector.vue'
-import ShippingCalculator from '../ShippingCalculator.vue'
-import PaymentOption from '../PaymentOption.vue'
+import ALink from '@ecomplus/storefront-components/src/ALink.vue'
+import AAlert from '@ecomplus/storefront-components/src/AAlert.vue'
+import APicture from '@ecomplus/storefront-components/src/APicture.vue'
+import APrices from '@ecomplus/storefront-components/src/APrices.vue'
+import AShare from '@ecomplus/storefront-components/src/AShare.vue'
+import ProductVariations from '@ecomplus/storefront-components/src/ProductVariations.vue'
+import ProductGallery from '@ecomplus/storefront-components/src/ProductGallery.vue'
+import QuantitySelector from '@ecomplus/storefront-components/src/QuantitySelector.vue'
+import ShippingCalculator from '@ecomplus/storefront-components/src/ShippingCalculator.vue'
+import PaymentOption from '@ecomplus/storefront-components/src/PaymentOption.vue'
 import ecomPassport from '@ecomplus/passport-client'
-import { toggleFavorite, checkFavorite } from './helpers/favorite-products'
+import { toggleFavorite, checkFavorite } from '@ecomplus/storefront-components/src/js/helpers/favorite-products'
 
 const storefront = (typeof window === 'object' && window.storefront) || {}
 const getContextBody = () => (storefront.context && storefront.context.body) || {}
@@ -162,7 +162,9 @@ export default {
       paymentOptions: [],
       customizations: [],
       kitItems: [],
-      currentTimer: null
+      currentTimer: null,
+      variationImages: [],
+      variationImagesKey: null
     }
   },
 
@@ -283,6 +285,21 @@ export default {
 
     isKit () {
       return this.body.kit_composition && this.body.kit_composition.length
+    },
+
+    productToGallery () {
+      if (this.variationImages.length) {
+        return {
+          ...this.body,
+          pictures: this.variationImages.map(([url, width]) => ({
+            zoom: {
+              url,
+              size: width ? `${width}x${width}` : undefined
+            }
+          }))
+        }
+      }
+      return this.body
     }
   },
 
@@ -362,7 +379,65 @@ export default {
       }
     },
 
-    showVariationPicture (variation) {
+    showVariationPictures (variation) {
+      if (this.body.categories) {
+        const pattern = this.body.specifications && this.body.specifications.pattern &&
+          this.body.specifications.pattern[0] && this.body.specifications.pattern[0].value
+        if (pattern) {
+          const isBrilliant = this.body.specifications && this.body.specifications.brilha_no_escuro &&
+            this.body.specifications.brilha_no_escuro[0] &&
+            this.body.specifications.brilha_no_escuro[0].value === 'sim'
+          let category = this.body.categories.find(({ slug }) => {
+            return [
+              'camiseta',
+              'moletom',
+              'camiseta-infantil',
+              'caderno',
+              'copo-bucks',
+              'quadro',
+              'poster',
+              'placa-decorativa',
+              'quebra-cabeca'
+            ].includes(slug)
+          })
+          if (category) {
+            category = category.slug
+            const { specifications } = variation
+            if (specifications) {
+              const model = specifications.modelo && specifications.modelo[0] &&
+                specifications.modelo[0].value
+              const color = specifications.colors && specifications.colors[0] &&
+                specifications.colors[0].text && specifications.colors[0].text
+                .toLowerCase()
+                .replace(/ÀàÁáÂâÃã/g, 'a')
+                .replace(/ÉéÊêẼẽ/g, 'e')
+                .replace(/ÍíÎîĨĩ/g, 'i')
+                .replace(/ÓóÔôÕõ/g, 'o')
+                .replace(/Úú/g, 'u')
+                .replace(/Çç/g, 'c')
+                .replace(/\s/g, '-')
+              switch (category) {
+                case 'camiseta':
+                case 'moletom':
+                case 'camiseta-infantil':
+                  if (model && color) {
+                    this.variationImages = [
+                      [`https://static.doppelstore.com.br/catalogo/${pattern}/${category}/${model}/${color}.jpg`, 1476],
+                      [`https://static.doppelstore.com.br/catalogo/${pattern}/arte-serigrafia-${color}.jpg`, 1200]
+                    ]
+                  }
+                  break
+                default:
+                  this.variationImages = []
+                  break
+              }
+              if (isBrilliant) {
+                this.variationImages.push([`https://static.doppelstore.com.br/catalogo/${pattern}/arte-brilho.jpg`, 1200])
+              }
+            }
+          }
+        }
+      }
       if (variation.picture_id) {
         const pictureIndex = this.body.pictures.findIndex(({ _id }) => {
           return _id === variation.picture_id
@@ -377,7 +452,7 @@ export default {
           return getSpecTextValue(variation, gridId) === optionText
         })
         if (variation) {
-          this.showVariationPicture(variation)
+          this.showVariationPictures(variation)
         }
       }
     },
@@ -422,7 +497,7 @@ export default {
         if (this.hasClickedBuy) {
           this.hasClickedBuy = false
         }
-        this.showVariationPicture(this.selectedVariation)
+        this.showVariationPictures(this.selectedVariation)
       }
     },
 
@@ -508,6 +583,10 @@ export default {
         }
       },
       immediate: true
+    },
+
+    variationImages (variationImages) {
+      this.variationImagesKey = variationImages.length ? Math.random().toString() : null
     }
   },
 
