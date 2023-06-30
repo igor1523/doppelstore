@@ -281,8 +281,6 @@ body {
     margin-left: auto;
     margin-right: auto;
     justify-content: center;
-    flex-wrap: nowrap;
-    overflow-x: auto;
   }
 }
 
@@ -724,3 +722,8 @@ body {
     border-radius: 50px;
 }
 
+.variations__value {
+    &.variations__value, &.variations__value--empty {
+        display: none;
+    }
+}

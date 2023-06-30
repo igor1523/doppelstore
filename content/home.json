@@ -22,102 +22,15 @@
       "enabled": true
     },
     {
-      "type": "banners-grid-block",
-      "reverse_order": false,
-      "banners": [
-        {
-          "img": "/img/uploads/Produtos-560x560-site-produtos-cadernos-lancamento_cadernos.webp",
-          "alt": "",
-          "link": "/cadernos",
-          "mobile_img": ""
-        },
-        {
-          "img": "/img/uploads/Produtos-560x560-site-produtos-camiseta-lancamento_cadernos.webp",
-          "alt": "",
-          "link": "/camisas",
-          "mobile_img": ""
-        },
-        {
-          "img": "/img/uploads/Produtos-560x560-site-produtos-meias-lancamento_cadernos.webp",
-          "alt": "",
-          "link": "/meias",
-          "mobile_img": ""
-        },
-        {
-          "img": "/img/uploads/Produtos-560x560-site-produtos-moletom-lancamento_cadernos.webp",
-          "alt": "",
-          "link": "/moletons",
-          "mobile_img": ""
-        },
-        {
-          "img": "/img/uploads/Produtos-560x560-site-produtos-copos_bucks-lancamento_cadernos.webp",
-          "alt": "",
-          "link": "/copo-bucks",
-          "mobile_img": ""
-        }
-      ]
-    },
-    {
-      "type": "stamps_list",
-      "stamps_title": "ÚLTIMAS ESTAMPAS LANÇADAS",
-      "banners": [
-        {
-          "img": "/img/uploads/180_estampa_curupira_fofo_8755_1_05ca69e7481c946193a0b53403111bd4.jpg",
-          "alt": "",
-          "link": "/cadernos",
-          "mobile_img": "",
-          "markdown_stamp": "<div class=\"stamps__block\"><div class=\"product-name\">Estampa Curupira Fofo</div><p class=\"product-print-message\">Clique para ver <span>todos os produtos</span> disponíveis nesta estampa</p></div>"
-        },
-        {
-          "img": "/img/uploads/180_estampa_sistema_au_au_7966_1_cce0cea99391bbbcd2a7d0595bb4050b.webp",
-          "alt": "",
-          "link": "/cadernos",
-          "mobile_img": "",
-          "markdown_stamp": "<div class=\"stamps__block\"><div class=\"product-name\">Estampa Sistema Au-Au</div><p class=\"product-print-message\">Clique para ver <span>todos os produtos</span> disponíveis nesta estampa</p></div>"
-        },
-        {
-          "img": "/img/uploads/180_estampa_dognauta_7961_1_07020ea16b4ea65f87d423af51304ce5.webp",
-          "alt": "",
-          "link": "/cadernos",
-          "mobile_img": "",
-          "markdown_stamp": "<div class=\"stamps__block\"><div class=\"product-name\">Estampa Dognauta</div><p class=\"product-print-message\">Clique para ver <span>todos os produtos</span> disponíveis nesta estampa</p></div>"
-        },
-        {
-          "img": "/img/uploads/180_estampa_canis_majoris_7958_1_a3c1c0b724dadae8a8bd61a2e3c1bba5.jpg",
-          "alt": "",
-          "link": "/cadernos",
-          "mobile_img": "",
-          "markdown_stamp": "<div class=\"stamps__block\"><div class=\"product-name\">Estampa Canis Majoris</div><p class=\"product-print-message\">Clique para ver <span>todos os produtos</span> disponíveis nesta estampa</p></div>"
-        },
-        {
-          "img": "/img/uploads/180_estampa_vira_lactea_7953_1_98df1e4f22826182048207fe04cd8bbd.webp",
-          "alt": "",
-          "link": "/cadernos",
-          "mobile_img": "",
-          "markdown_stamp": "<div class=\"stamps__block\"><div class=\"product-name\">Estampa Vira Láctea</div><p class=\"product-print-message\">Clique para ver <span>todos os produtos</span> disponíveis nesta estampa</p></div>"
-        },
-        {
-          "img": "/img/uploads/180_estampa_mia_lactea_7948_1_78b6e006ab2c77289debc155753039ee.webp",
-          "alt": "",
-          "link": "/cadernos",
-          "mobile_img": "",
-          "markdown_stamp": "<div class=\"stamps__block\"><div class=\"product-name\">Estampa Mia Láctea</div><p class=\"product-print-message\">Clique para ver <span>todos os produtos</span> disponíveis nesta estampa</p></div>"
-        },
-        {
-          "img": "/img/uploads/180_estampa_astro_que_mia_7943_1_a1e53f7a82a2de21ccbd3951391f4870.jpg",
-          "alt": "",
-          "link": "/cadernos",
-          "mobile_img": "",
-          "markdown_stamp": "<div class=\"stamps__block\"><div class=\"product-name\">Estampa Astro Que Mia</div><p class=\"product-print-message\">Clique para ver <span>todos os produtos</span> disponíveis nesta estampa</p></div>"
-        },
-        {
-          "img": "/img/uploads/180_estampa_luz_do_miar_7938_1_44aef30f1cd4f4f279be31224fe92647.jpg",
-          "alt": "",
-          "link": "/cadernos",
-          "mobile_img": "",
-          "markdown_stamp": "<div class=\"stamps__block\"><div class=\"product-name\">Estampa Luz do Miar</div><p class=\"product-print-message\">Clique para ver <span>todos os produtos</span> disponíveis nesta estampa</p></div>"
-        }
-      ]
+      "autoplay": 2000,
+      "page": 1,
+      "title": "ÚLTIMAS ESTAMPAS LANÇADAS ",
+      "shuffle": false,
+      "headless": false,
+      "type": "collection-shelf",
+      "limit": 12,
+      "collection_id": "6492f2735e6069037042bb18:categories:Estampas:/estampas",
+      "sort": "sales"
     },
     {
       "type": "banners-grid-block",

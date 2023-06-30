@@ -9,7 +9,7 @@
   :data-sku="body.sku"
 >
   <transition :enter-active-class="transitionClass">
-    <section v-if="!isLoading">
+    <section v-if="!isLoading && !patternUrl">
       <slot
         name="discount-tag"
         v-bind="{ discount }"
@@ -171,6 +171,79 @@
         ></div>
       </slot>
     </section>
+    <section v-if="!isLoading && patternUrl">
+      <slot
+        name="discount-tag"
+        v-bind="{ discount }"
+      >
+        <span
+          v-if="isActive && discount > 0"
+          class="product-card__offer-stamp"
+        >
+          <i class="i-arrow-down"></i> <b>{{ discount }}</b>%
+        </span>
+      </slot>
+      <slot name="stamps" />
+
+      <slot name="body">
+        <a-link
+          class="product-card__link"
+          :href="patternUrl"
+          :title="name"
+        >
+          <slot name="header"/>
+
+          <div class="product-card__pictures">
+            <template v-if="body.pictures && body.pictures.length">
+              <a-picture
+                class="product-card__picture"
+                v-for="(picture, index) in body.pictures.slice(0, 2).reverse()"
+                v-if="body.pictures.length === 1 || index === 1 || isHovered"
+                :key="index"
+                :src="picture"
+                :can-calc-height="false"
+              />
+            </template>
+            <a-picture
+              v-else
+              class="product-card__picture"
+            />
+          </div>
+
+          <slot name="title">
+            <component
+              :is="headingTag"
+              class="product-card__name"
+            >
+              {{ name }}
+            </component>
+          </slot>
+
+        </a-link>
+      </slot>      
+      
+      <slot name="favorite">
+        <a 
+          class="btn product-card__favorite fade"
+          @click="toggleFavorite"
+          :href="isLogged ? null : accountUrl"
+        >
+          <i 
+            class="i-heart mr-1"
+            :class="isFavorite ? 'active' : null"
+          >
+          </i>
+        </a>      
+      </slot>
+
+      <slot name="footer">
+        <div
+          v-if="footerHtml"
+          v-html="footerHtml"
+        ></div>
+      </slot>
+    </section>
+
   </transition>
 
   <template v-if="isLoading">

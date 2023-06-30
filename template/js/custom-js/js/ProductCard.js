@@ -155,25 +155,52 @@ export default {
     bodyWithColors () {
       const { body } = this
       const newBody = Object.assign({} ,body)
-      const variations = newBody.variations.map(variation => {
-        const { specifications } = variation
-        if (Object.keys(specifications).includes('colors')) {
-          for (const key in specifications) {
-            if (Object.hasOwnProperty.call(specifications, key)) {
-              if (key !== 'colors') {
-                delete specifications[key]
+      if (newBody.variations) {
+        const variations = newBody.variations.map(variation => {
+          const { specifications } = variation
+          if (Object.keys(specifications).includes('colors')) {
+            for (const key in specifications) {
+              if (Object.hasOwnProperty.call(specifications, key)) {
+                if (key !== 'colors') {
+                  delete specifications[key]
+                }
               }
             }
           }
-        }
-        return variation
-      })
+          return variation
+        })
+  
+        return {
+          ...newBody,
+          variations
+        } 
+      }
+    },
 
-      return {
-        ...newBody,
-        variations
-      } 
+    patternUrl () {
+      const { body } = this
+      if (body.categories) {
+        const isPattern = body.categories.some(category => {
+          return category._id === '6492f2735e6069037042bb18'
+        })
+        if (isPattern) {
+          if (body.specs) {
+            const { specs } = body
+            const indexSpec = specs.findIndex(spec => {
+              return spec['grid'] === 'pattern'
+            })
+            if (indexSpec) {
+              return `/search?filters[]=pattern:${specs[indexSpec].text}`
+            }
+            return null
+          }
+          return null
+        }
+        return null
+      }
+      return null
     }
+
   },
 
   methods: {
