@@ -74,12 +74,6 @@
             ></div>
           </slot>
 
-          <a 
-            v-if="body && body.specifications && body.specifications['pattern']"
-            class="product-print-design-link" :href="`/search?filters[]=pattern:${body.specifications['pattern'][0].text}`">
-            Ver todos os produtos desta estampa
-          </a>
-
           <div
             v-if="!body.available"
             class="product__unavailable"
