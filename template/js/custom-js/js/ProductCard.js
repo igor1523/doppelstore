@@ -143,10 +143,13 @@ export default {
 
     hasColors () {
       const { body } = this
-       return body.variations.some(variation => {
-        const { specifications } = variation
-        return Object.keys(specifications).includes('colors')
-      })
+      if (body.variations) {
+        return body.variations.some(variation => {
+          const { specifications } = variation
+          return Object.keys(specifications).includes('colors')
+        })
+      }
+      return false
     },
 
     bodyWithColors () {

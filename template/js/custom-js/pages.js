@@ -1,6 +1,11 @@
 // Add your custom JavaScript for storefront pages here.
-$('#search-input').on('input', (e) => {
-    console.log(e.currentTarget.value)
+$('.header__search-input').on('input', function(){
     $('.search__box.card').show()
-    $('.search__input.form-control').val(e.currentTarget.value).trigger('input')
+    $('body .search__input').val($(this).val())[0].dispatchEvent(new Event('input'));
+});
+
+$('body').click((e) => {
+    if($(e.target).closest('.header__search').length == 0){
+        $('#instant-search .search__status .close').click();
+    }
 })
