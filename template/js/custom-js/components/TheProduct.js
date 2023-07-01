@@ -424,7 +424,6 @@ export default {
           if (category) {
             category = category.slug
             const { specifications } = variation
-            console.log({ category, specifications })
             if (specifications) {
               const color = specifications.colors && specifications.colors[0] &&
                 specifications.colors[0].text && specifications.colors[0].text
