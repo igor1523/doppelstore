@@ -1,5 +1,5 @@
 <% if (_.state.body_html) {
-  const clothingCategory = _.state.categories.find(({ slug }) => {
+  const clothingCategory = _.state.categories && _.state.categories.find(({ slug }) => {
     return [
       'camiseta',
       'moletom',
