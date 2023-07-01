@@ -9,7 +9,7 @@ process.env.STOREFRONT_LONG_CACHE = 'false'
 
 initializeApp()
 
-exports.ssr2 = onRequest({
+exports.ssr = onRequest({
   concurrency: 80,
   minInstances: 0,
   memory: '1GiB',
