@@ -399,7 +399,8 @@ body {
   &__rating,
   &__prices,
   &__buy,
-  &__colors {
+  &__colors,
+  &__pattern-link {
     padding-left: var(--spacer-3);
     padding-right: var(--spacer-3);
     @media(max-width: 992px) {
@@ -451,6 +452,17 @@ body {
         width: auto;
       }
     }
+  }
+
+  &__pattern-link {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    font-size: .825rem;
+    text-decoration: none !important;
+    padding-bottom: .25rem;
+    text-align: center;
   }
 }
 

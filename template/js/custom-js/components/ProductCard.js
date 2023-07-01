@@ -144,6 +144,12 @@ export default {
     colorOptions () {
       const variationGrids = getVariationsGrids(this.body)
       return variationGrids.colors && variationGrids.colors.slice(0, 6)
+    },
+
+    isPatternProduct () {
+      return this.body.categories && this.body.categories.some(category => {
+        return category.slug === 'estampas'
+      })
     }
   },
 
@@ -225,6 +231,20 @@ export default {
         return getSpecValueByText(this.body.variations, colorName.trim(), 'colors')
       })
       return `background:${rgbs[0]}`
+    }
+  },
+
+  watch: {
+    isPatternProduct: {
+      handler (isPatternProduct) {
+        if (isPatternProduct) {
+          const pattern = this.body.name.replace(/Estampa\s/i, '')
+          if (pattern) {
+            this.body.slug = `search?filters[]=pattern:${encodeURIComponent(pattern)}`
+          }
+        }
+      },
+      immediate: true
     }
   },
 

@@ -9,19 +9,21 @@
   :data-sku="body.sku"
 >
   <transition :enter-active-class="transitionClass">
-    <section v-if="!isLoading">
-      <slot
-        name="discount-tag"
-        v-bind="{ discount }"
-      >
-        <span
-          v-if="isActive && discount > 0"
-          class="product-card__offer-stamp"
+    <section v-if="!isLoading || isPatternProduct">
+      <template v-if="!isPatternProduct">
+        <slot
+          name="discount-tag"
+          v-bind="{ discount }"
         >
-          <i class="i-arrow-down"></i> <b>{{ discount }}</b>%
-        </span>
-      </slot>
-      <slot name="stamps" />
+          <span
+            v-if="isActive && discount > 0"
+            class="product-card__offer-stamp"
+          >
+            <i class="i-arrow-down"></i> <b>{{ discount }}</b>%
+          </span>
+        </slot>
+        <slot name="stamps" />
+      </template>
 
       <slot name="body">
         <a-link
@@ -59,129 +61,142 @@
         </a-link>
       </slot>
 
-      <slot name="rating">
-        <div
-          v-once
-          class="product-card__rating"
-          :data-sku="body.sku"
-          v-html="ratingHtml"
-        ></div>
-      </slot>
-
-      <slot
-        name="unavailable"
-        v-if="!body.available || !body.visible"
+      <a-link
+        v-if="isPatternProduct"
+        class="product-card__pattern-link"
+        :href="`/${body.slug}`"
       >
-        <p class="badge badge-warning mt-auto">
-          {{ i19unavailable }}
-        </p>
-      </slot>
-
-      <slot
-        name="out-of-stock"
-        v-else-if="!isInStock"
-      >
-        <p class="badge badge-dark mt-auto">
-          {{ i19outOfStock }}
-        </p>
-      </slot>
-
-      <slot
-        name="without-price"
-        v-else-if="isWithoutPrice"
-      >
-        <p class="badge badge-info mt-auto">
-          {{ i19uponRequest }}
-        </p>
-      </slot>
+        <span>
+          Ver todos os produtos
+          <span class="d-inline-block">nesta estampa</span>
+        </span>
+      </a-link>
 
       <template v-else>
-        <slot name="prices">
-          <a-prices
-            class="product-card__prices"
-            :product="body"
-            :installments-option="installmentsOption"
-            :discount-option="discountOption"
-          />
+        <slot name="rating">
+          <div
+            v-once
+            class="product-card__rating"
+            :data-sku="body.sku"
+            v-html="ratingHtml"
+          ></div>
         </slot>
 
-        <div
-          @click="buy"
-          class="product-card__buy fade"
+        <slot
+          name="unavailable"
+          v-if="!body.available || !body.visible"
         >
-          <slot name="buy">
-            <div
-              v-if="buyHtml"
-              v-html="buyHtml"
-            ></div>
+          <p class="badge badge-warning mt-auto">
+            {{ i19unavailable }}
+          </p>
+        </slot>
 
-            <button
-              type="button"
-              class="btn btn-primary"
-              :class="isSmall ? 'btn-sm': 'btn-block'"
-              :disabled="isWaitingBuy"
-            >
-              <span
-                v-if="isWaitingBuy"
-                class="product-card__buy-loading spinner-grow spinner-grow-sm"
-                role="status"
-              >
-                <span class="sr-only">Loading...</span>
-              </span>
+        <slot
+          name="out-of-stock"
+          v-else-if="!isInStock"
+        >
+          <p class="badge badge-dark mt-auto">
+            {{ i19outOfStock }}
+          </p>
+        </slot>
 
-              <slot name="buy-button-content">
-                <i class="i-shopping-bag mr-1"></i>
-                {{ strBuy }}
-              </slot>
-            </button>
+        <slot
+          name="without-price"
+          v-else-if="isWithoutPrice"
+        >
+          <p class="badge badge-info mt-auto">
+            {{ i19uponRequest }}
+          </p>
+        </slot>
+
+        <template v-else>
+          <slot name="prices">
+            <a-prices
+              class="product-card__prices"
+              :product="body"
+              :installments-option="installmentsOption"
+              :discount-option="discountOption"
+            />
           </slot>
-        </div>
 
-        <div
-          v-if="colorOptions"
-          class="product-card__colors"
-        >
-          <span
-            v-for="colorName in colorOptions"
-            class="product-card__color-option"
-            :class="`product-card__color-option--${colorName}`"
-            :style="getColorOptionBg(colorName)"
+          <div
+            @click="buy"
+            class="product-card__buy fade"
           >
-            {{ colorName }}
-          </span>
-          <span
-            v-if="colorOptions.length === 6"
-            class="product-card__color-option product-card__color-option--plus"
+            <slot name="buy">
+              <div
+                v-if="buyHtml"
+                v-html="buyHtml"
+              ></div>
+
+              <button
+                type="button"
+                class="btn btn-primary"
+                :class="isSmall ? 'btn-sm': 'btn-block'"
+                :disabled="isWaitingBuy"
+              >
+                <span
+                  v-if="isWaitingBuy"
+                  class="product-card__buy-loading spinner-grow spinner-grow-sm"
+                  role="status"
+                >
+                  <span class="sr-only">Loading...</span>
+                </span>
+
+                <slot name="buy-button-content">
+                  <i class="i-shopping-bag mr-1"></i>
+                  {{ strBuy }}
+                </slot>
+              </button>
+            </slot>
+          </div>
+
+          <div
+            v-if="colorOptions"
+            class="product-card__colors"
           >
-            <i class="i-plus"></i>
-          </span>
-        </div>
-      </template>      
+            <span
+              v-for="colorName in colorOptions"
+              class="product-card__color-option"
+              :class="`product-card__color-option--${colorName}`"
+              :style="getColorOptionBg(colorName)"
+            >
+              {{ colorName }}
+            </span>
+            <span
+              v-if="colorOptions.length === 6"
+              class="product-card__color-option product-card__color-option--plus"
+            >
+              <i class="i-plus"></i>
+            </span>
+          </div>
+        </template>      
       
-      <slot name="favorite">
-        <a 
-          class="btn product-card__favorite fade"
-          @click="toggleFavorite"
-          :href="isLogged ? null : accountUrl"
-        >
-          <i 
-            class="i-heart mr-1"
-            :class="isFavorite ? 'active' : null"
+        <slot name="favorite">
+          <a 
+            class="btn product-card__favorite fade"
+            @click="toggleFavorite"
+            :href="isLogged ? null : accountUrl"
           >
-          </i>
-        </a>      
-      </slot>
+            <i 
+              class="i-heart mr-1"
+              :class="isFavorite ? 'active' : null"
+            >
+            </i>
+          </a>      
+        </slot>
 
-      <slot name="footer">
-        <div
-          v-if="footerHtml"
-          v-html="footerHtml"
-        ></div>
-      </slot>
+        <slot name="footer">
+          <div
+            v-if="footerHtml"
+            v-html="footerHtml"
+          ></div>
+        </slot>
+      </template>
     </section>
   </transition>
 
-  <template v-if="isLoading">
+  <template v-if="isLoading && !isPatternProduct">
     <slot/>
     <div
       v-if="error"
