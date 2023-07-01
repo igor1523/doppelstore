@@ -106,9 +106,24 @@ if (stamps && Array.isArray(stamps.stamps_list) && stamps.stamps_list.length) {
               <% if (_.state.variations && _.state.variations.length) { %>
                 <div data-slot="variations-info">
                   <!-- Custom info for products with variations, such as sizes table link -->
-                  <% if (opt.size_guide && opt.size_guide.image) { %>
-                    <% const sizeGuideTitle = opt.size_guide.title || _.dictionary('sizeGuide') %>
-                    <div class="mb-3">
+                  <%
+                  let sizeGuide = opt.size_guide
+                  const clothingCategory = _.state.categories && _.state.categories.find(({ slug }) => {
+                    return [
+                      'camiseta',
+                      'moletom',
+                      'camiseta-infantil',
+                    ].includes(slug)
+                  })
+                  const clothingCategorySlug = clothingCategory && clothingCategory.slug
+                  if (clothingCategorySlug) {
+                    sizeGuide = {
+                      image: 'auto'
+                    }
+                  }
+                  if (sizeGuide && sizeGuide.image) { %>
+                    <% const sizeGuideTitle = sizeGuide.title || 'Tabela de medidas' %>
+                    <div class="mb-3 fw-500">
                       <a 
                         href="javascript:;"
                         data-toggle="modal"
@@ -116,8 +131,9 @@ if (stamps && Array.isArray(stamps.stamps_list) && stamps.stamps_list.length) {
                       >
                         <i class="i-ruler mr-1"></i> <%= sizeGuideTitle %>
                       </a>
+                      <i class="i-info-circle ml-1"></i>
                     </div>
-                    <div 
+                    <div
                       class="modal modal-center fade" 
                       id="modal-size-guide" 
                       tabindex="-1" 
@@ -131,15 +147,24 @@ if (stamps && Array.isArray(stamps.stamps_list) && stamps.stamps_list.length) {
                               <%= sizeGuideTitle %>
                             </h5>
                             <button type="button" class="close" data-dismiss="modal">
-                              <span aria-hidden="true">&times;</span>
+                              <span aria-hidden="true">
+                                <i class="i-times"></i>
+                              </span>
                             </button>
                           </div>
                           <div class="modal-body">
-                            <img 
-                              class="img-fluid" 
-                              src="<%= opt.size_guide.image %>" 
-                              alt="<%= sizeGuideTitle %>"
-                            >
+                            <% if (clothingCategorySlug) { %>
+                              <picture class="img-fluid">
+                                <source srcset="<%= `/img/uploads/tabela-de-medidas-${clothingCategorySlug}-desktop.webp` %>"
+                                  media="(min-width: 750px)" type="image/webp">
+                                <source srcset="<%= `/img/uploads/tabela-de-medidas-${clothingCategorySlug}-mobile.webp` %>"
+                                  media="(min-width: 100px)" type="image/webp">
+                                <img src="<%= `/img/uploads/tabela-de-medidas-${clothingCategorySlug}-mobile.webp` %>"
+                                  loading="lazy" alt="Tabela de medidas" class="img-fluid">
+                              </picture>
+                            <% } else { %>
+                              <img class="img-fluid" src="<%= sizeGuide.image %>" alt="<%= sizeGuideTitle %>">
+                            <% } %>
                           </div>
                         </div>
                       </div>

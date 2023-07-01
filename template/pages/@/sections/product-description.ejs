@@ -24,11 +24,6 @@
               aria-controls="nav-quality" aria-selected="false">
               Qualidade
             </button>
-            <button class="nav-link" id="nav-measurements-tab"
-              data-toggle="tab" data-target="#nav-measurements" type="button" role="tab"
-              aria-controls="nav-measurements" aria-selected="false">
-              Tabela de medidas da camiseta
-            </button>
             <button class="nav-link" id="nav-composition-tab"
               data-toggle="tab" data-target="#nav-composition" type="button" role="tab"
               aria-controls="nav-composition" aria-selected="false">
@@ -66,7 +61,7 @@
                 Bem legal, né? Fora isso, usamos uma fragrância bem gostosa nas camisetas, você vai adorar.
               </p>
               <p class="my-4">
-                <img alt="" class="lozad" data-src="https://lh6.googleusercontent.com/wcX-53tYKMpaS08iJ-gbP1xiyg3spkOcjWTiSiIPT-1FZCGzFij7-lCJA5wbZQ4YLYguXI9bYWvRNH1v8oVbfhjEJBC6hZv9OWwBfua_xU5WQmVExP3rllvdCZFF8Sd4XevxX04-" style="max-width: 600px">
+                <img alt="" class="lozad" data-src="https://lh6.googleusercontent.com/wcX-53tYKMpaS08iJ-gbP1xiyg3spkOcjWTiSiIPT-1FZCGzFij7-lCJA5wbZQ4YLYguXI9bYWvRNH1v8oVbfhjEJBC6hZv9OWwBfua_xU5WQmVExP3rllvdCZFF8Sd4XevxX04-">
               </p>
               <h3>Por que eu deveria comprar com vocês?</h3>
               <p>
@@ -94,18 +89,20 @@
                 Na dúvida, pegue um tamanho maior :) E se o tamanho não ficar bom, a gente troca sem problemas :)
               </p>
               <h3>Qualidade e Lavagem</h3>
-              <p class="mt-4"><img alt="" class="lozad" data-src="/img/uploads/qualidademasc.webp" style="max-width: 600px"></p>
-              <p><img alt="" class="lozad" data-src="/img/uploads/qualidade2.webp" style="max-width: 600px"></p>
-            </div>
-          </div>
-          <div class="tab-pane fade" id="nav-measurements" role="tabpanel" aria-labelledby="nav-measurements-tab">
-            <div class="html-clearfix">
-              <img alt="" class="lozad" data-src="/img/uploads/tabelademedidascamisetadesktop.webp">
+              <p class="mt-4"><img alt="" class="lozad" data-src="/img/uploads/qualidademasc.webp"></p>
+              <p><img alt="" class="lozad" data-src="/img/uploads/qualidade2.webp"></p>
             </div>
           </div>
           <div class="tab-pane fade" id="nav-composition" role="tabpanel" aria-labelledby="nav-composition-tab">
             <div class="html-clearfix">
-              <img alt="" class="lozad" data-src="/img/uploads/qualidadecamisetaregataregatinhadesk.webp">
+              <picture class="img-fluid">
+                <source srcset="/img/uploads/qualidadecamisetaregataregatinhadesk.webp"
+                  media="(min-width: 750px)" type="image/webp">
+                <source srcset="/img/uploads/qualidadecamisetaregataregatinhamobile.webp"
+                  media="(min-width: 100px)" type="image/webp">
+                <img src="/img/uploads/qualidadecamisetaregataregatinhamobile.webp"
+                  loading="lazy" alt="Qualidade e composição" class="img-fluid">
+              </picture>
             </div>
           </div>
         <% } %>
