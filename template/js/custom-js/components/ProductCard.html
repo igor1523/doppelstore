@@ -136,6 +136,26 @@
             </button>
           </slot>
         </div>
+
+        <div
+          v-if="colorOptions"
+          class="product-card__colors"
+        >
+          <span
+            v-for="colorName in colorOptions"
+            class="product-card__color-option"
+            :class="`product-card__color-option--${colorName}`"
+            :style="getColorOptionBg(colorName)"
+          >
+            {{ colorName }}
+          </span>
+          <span
+            v-if="colorOptions.length === 6"
+            class="product-card__color-option product-card__color-option--plus"
+          >
+            <i class="i-plus"></i>
+          </span>
+        </div>
       </template>      
       
       <slot name="favorite">

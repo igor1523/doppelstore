@@ -369,6 +369,80 @@ body {
   }
 }
 
+.product-card {
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+  background-color: $dark-slate;
+  border-radius: .3rem;
+  overflow: hidden;
+
+  &__name {
+    padding-top: 1rem;
+    font-size: .925rem;
+    font-weight: 500;
+    color: $slate-200;
+  }
+  .prices__installments {
+    font-size: .875rem;
+    font-weight: 500;
+    color: #fff;
+    &::before {
+      content: 'ou ';
+    }
+    &::after {
+      content: ' Sem Juros Cartão';
+    }
+  }
+
+  &__name,
+  &__rating,
+  &__prices,
+  &__buy,
+  &__colors {
+    padding-left: var(--spacer-3);
+    padding-right: var(--spacer-3);
+    @media(max-width: 992px) {
+      padding-left: var(--spacer-2);
+      padding-right: var(--spacer-2);
+    }
+  }
+
+  &__colors {
+    line-height: 0;
+    margin-top: var(--spacer-1);
+    position: absolute;
+    bottom: 1rem;
+    display: flex;
+    gap: .25rem;
+    width: 100%;
+  }
+  &__color-option {
+    display: inline-block;
+    border-radius: 50%;
+    font-size: 0;
+    border: 1px solid $slate-400;
+    width: 20px;
+    height: 20px;
+    &--plus {
+      border-color: #111;
+      background: #111;
+      color: #fff;
+      font-size: 13px;
+      line-height: 18px;
+      text-align: center;
+    }
+  }
+  &__buy {
+    z-index: 1;
+  }
+
+  &__picture img {
+    width: 100%;
+    max-height: 100%;
+  }
+}
+
 .text-center {
   text-align: center;
 }
@@ -643,53 +717,6 @@ body {
         height: 4px;
         margin: 15px auto 0;
         background-color: var(--primary);
-    }
-}
-.gallery {
-    &__item, .glide__slide {
-        img {
-            max-width: 100%;
-        }
-    }
-}
-
-.product-card {
-    padding-left: 0;
-    padding-right: 0;
-    padding-top: 0;
-    background-color: #283043 !important;
-
-    &__name {
-        padding-top: 1rem;
-        font-size: .875rem;
-        font-weight: 500;
-        color: #fff;
-    }
-
-    .prices__installments {
-        font-size: .875rem !important;
-        font-weight: 500 !important;
-        color: #fff;
-        &::before {
-            content: 'ou ';
-        }
-        &::after {
-            content: ' Sem Juros Cartão';
-        }
-    }
-
-    &__name, &__rating, &__prices, &__buy, .variations {
-        padding-left: var(--spacer-3);
-        padding-right: var(--spacer-3);
-        @media(max-width: 992px) {
-            padding-left: var(--spacer-1);
-            padding-right: var(--spacer-1);
-        }
-    }
-
-    &__picture img {
-        width: 100%;
-        max-height: 100% !important;
     }
 }
 

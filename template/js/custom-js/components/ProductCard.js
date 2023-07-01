@@ -11,7 +11,9 @@ import {
   name as getName,
   inStock as checkInStock,
   onPromotion as checkOnPromotion,
-  price as getPrice
+  price as getPrice,
+  specValueByText as getSpecValueByText,
+  variationsGrids as getVariationsGrids
 } from '@ecomplus/utils'
 
 import Vue from 'vue'
@@ -137,6 +139,11 @@ export default {
       return checkOnPromotion(body)
         ? Math.round(((body.base_price - getPrice(body)) * 100) / body.base_price)
         : 0
+    },
+
+    colorOptions () {
+      const variationGrids = getVariationsGrids(this.body)
+      return variationGrids.colors && variationGrids.colors.slice(0, 6)
     }
   },
 
@@ -211,6 +218,13 @@ export default {
             this.isWaitingBuy = false
           })
       }
+    },
+
+    getColorOptionBg (optionText) {
+      const rgbs = optionText.split(',').map(colorName => {
+        return getSpecValueByText(this.body.variations, colorName.trim(), 'colors')
+      })
+      return `background:${rgbs[0]}`
     }
   },
 
