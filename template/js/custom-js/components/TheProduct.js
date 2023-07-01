@@ -314,7 +314,28 @@ export default {
         body_text: '',
         inventory_records: []
       }
+      this.sortVariationGrids()
       this.$emit('update:product', data)
+    },
+
+    sortVariationGrids () {
+      if (this.body.variations) {
+        this.body.variations.forEach(variation => {
+          const specifications = {}
+          if (variation.specifications.colors) {
+            specifications.colors = variation.specifications.colors
+          }
+          if (variation.specifications.pauta) {
+            specifications.pauta = variation.specifications.pauta
+          }
+          Object.keys(variation.specifications).forEach((grid) => {
+            if (grid !== 'colors' && grid !== 'pauta') {
+              specifications[grid] = variation.specifications[grid]
+            }
+          })
+          variation.specifications = specifications
+        })
+      }
     },
 
     fetchProduct (isRetry = false) {
@@ -403,9 +424,8 @@ export default {
           if (category) {
             category = category.slug
             const { specifications } = variation
+            console.log({ category, specifications })
             if (specifications) {
-              const model = specifications.modelo && specifications.modelo[0] &&
-                specifications.modelo[0].value
               const color = specifications.colors && specifications.colors[0] &&
                 specifications.colors[0].text && specifications.colors[0].text
                 .toLowerCase()
@@ -416,10 +436,17 @@ export default {
                 .replace(/Úú/g, 'u')
                 .replace(/Çç/g, 'c')
                 .replace(/\s/g, '-')
+              const model = specifications.modelo && specifications.modelo[0] &&
+                specifications.modelo[0].value
+              const pauta = specifications.pauta && specifications.pauta[0] &&
+                specifications.pauta[0].value
+              const tampa = specifications.tampa && specifications.tampa[0] &&
+                specifications.tampa[0].value
+              const size = specifications.size && specifications.size[0] &&
+                specifications.size[0].value
+              this.variationImages = []
               switch (category) {
                 case 'camiseta':
-                case 'moletom':
-                case 'camiseta-infantil':
                   if (model && color) {
                     this.variationImages = [
                       [`https://static.doppelstore.com.br/catalogo/${pattern}/${category}/${model}/${color}.jpg`, 1476],
@@ -427,11 +454,48 @@ export default {
                     ]
                   }
                   break
-                default:
-                  this.variationImages = []
+                case 'moletom':
+                case 'camiseta-infantil':
+                  if (color) {
+                    this.variationImages = [
+                      [`https://static.doppelstore.com.br/catalogo/${pattern}/${category}/${color}.jpg`, 1476],
+                      [`https://static.doppelstore.com.br/catalogo/${pattern}/arte-serigrafia-${color}.jpg`, 1200]
+                    ]
+                  }
+                  break
+                case 'caderno':
+                  if (pauta) {
+                    this.variationImages = [
+                      [pauta !== 'sem-pauta'
+                        ? `https://static.doppelstore.com.br/produtos/${category}/pauta-${pauta}.jpg`
+                        : `https://static.doppelstore.com.br/produtos/${category}/sem-pauta.jpg`, 1500],
+                      [`https://static.doppelstore.com.br/catalogo/${pattern}/${category}/1.jpg`, 1500],
+                      [`https://static.doppelstore.com.br/produtos/${category}/contra-capa.jpg`, 1500],
+                      [`https://static.doppelstore.com.br/catalogo/${pattern}/arte-papelaria.jpg`, 1200]
+                    ]
+                  }
+                  break
+                case 'copo-bucks':
+                  if (tampa) {
+                    this.variationImages = [
+                      [`https://static.doppelstore.com.br/catalogo/${pattern}/copo-bucks/${tampa}.jpg`, 1500],
+                      [`https://static.doppelstore.com.br/catalogo/${pattern}/arte-papelaria.jpg`, 1200]
+                    ]
+                  }
+                  break
+                case 'poster':
+                case 'placa-decorativa':
+                case 'quebra-cabeca':
+                  if (size) {
+                    this.variationImages = [
+                      [`https://static.doppelstore.com.br/produtos/${category}/${size.replace(/-[\d]+-pcs$/, '')}.jpg`, 1200],
+                      [`https://static.doppelstore.com.br/catalogo/${pattern}/${category}/1.jpg`, 1200],
+                      [`https://static.doppelstore.com.br/catalogo/${pattern}/arte-papelaria.jpg`, 1200]
+                    ]
+                  }
                   break
               }
-              if (isBrilliant) {
+              if (isBrilliant && this.variationImages.length) {
                 this.variationImages.push([`https://static.doppelstore.com.br/catalogo/${pattern}/arte-brilho.jpg`, 1200])
               }
             }
@@ -585,8 +649,15 @@ export default {
       immediate: true
     },
 
-    variationImages (variationImages) {
-      this.variationImagesKey = variationImages.length ? Math.random().toString() : null
+    variationImages (variationImages, pastVariationImages) {
+      if (variationImages.length) {
+        if (pastVariationImages.length && pastVariationImages[0][0] === variationImages[0][0]) {
+          return
+        }
+        this.variationImagesKey = Math.random().toString()
+      } else {
+        this.variationImagesKey = null
+      }
     }
   },
 
@@ -596,6 +667,7 @@ export default {
     }
     if (this.product) {
       this.body = this.product
+      this.sortVariationGrids()
       if (this.isSSR) {
         this.fetchProduct().then(presetQntToBuy)
       } else {

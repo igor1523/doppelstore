@@ -56,6 +56,9 @@ body {
     justify-content: center;
     gap: 2rem;
   }
+  .minicart__aside {
+    height: 100vh;
+  }
 
   &__nav {
     text-transform: none;
@@ -295,9 +298,11 @@ body {
   gap: 0 2rem;
   &__grid {
     min-width: 135px;
-    &:first-child,
-    &:nth-child(2) {
+    &:first-child:not(:last-child):not(.variations__grid--pauta) {
       flex-basis: calc(50% - 1rem);
+      + div {
+        flex-basis: calc(50% - 1rem);
+      }
     }
   }
 
