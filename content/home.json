@@ -22,15 +22,15 @@
       "enabled": true
     },
     {
-      "autoplay": 2000,
+      "autoplay": 0,
       "page": 1,
-      "title": "ÚLTIMAS ESTAMPAS LANÇADAS ",
+      "title": "ÚLTIMAS ESTAMPAS LANÇADAS",
       "shuffle": false,
       "headless": false,
       "type": "collection-shelf",
       "limit": 12,
       "collection_id": "6492f2735e6069037042bb18:categories:Estampas:/estampas",
-      "sort": "sales"
+      "sort": "news"
     },
     {
       "type": "banners-grid-block",
@@ -69,7 +69,7 @@
       ]
     },
     {
-      "autoplay": 2000,
+      "autoplay": 0,
       "page": 1,
       "title": "AS MAIS FAMOSAS DE TODOS OS TEMPOS",
       "shuffle": false,
@@ -120,7 +120,7 @@
       ]
     },
     {
-      "autoplay": 2000,
+      "autoplay": 0,
       "page": 1,
       "title": "CADERNOS",
       "shuffle": false,

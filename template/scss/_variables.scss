@@ -1,19 +1,21 @@
 @import '#template/scss/variables';
 
-$success: #3bbea7;
-$warning: #e0234e;
+$info: #0ea5e9;
+$success: #10b981;
+$warning: #f59e0b;
+$danger: #f43f5e;
 $white: #fff;
-$gray-100: #f8f9fa;
-$gray-200: #e9ecef;
-$gray-300: #dee2e6;
-$gray-400: #ced4da;
-$gray-500: #adb5bd;
-$gray-600: #6c757d;
-$gray-700: #495057;
-$gray-800: #343a40;
-$gray-900: #212529;
+$gray-100: #f8fafc;
+$gray-200: #f1f5f9;
+$gray-300: #e2e8f0;
+$gray-400: #cbd5e1;
+$gray-500: #94a3b8;
+$gray-600: #64748b;
+$gray-700: #475569;
+$gray-800: #334155;
+$gray-900: #1e293b;
 $black: #000;
-$light: $gray-600;
+$light: #475569;
 
 $list-group-color: $white;
 $list-group-bg: $gray-900;
@@ -32,4 +34,4 @@ $component-active-bg: $white;
 $font-family-sans-serif: 'Encode Sans Variable', sans-serif;
 
 $body-bg: #161b28;
-$body-color: $gray-100;
+$body-color: #f1f5f9;
